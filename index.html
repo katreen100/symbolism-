@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="shortcut icon" type="image/x-icon" href="game.svg" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+    <title>Symbolism</title>
+</head>
+
+<body onload="openGame();">
+    <div style="width:400px;margin: auto;">
+        <div id="instructions" class="bubble bubble-bottom-left" contenteditable>Each symbol in the center corresponds
+            with a character at the bottom of the screen.
+            Clickon the corresponding character. As you progress, the symbols will disappear and the charachters will
+            swap.
+        </div>
+        <div id="endGame">
+            <div>
+                <i class="fas fa-trophy" style="color:goldenrod;"></i>
+            </div>
+            <div id="levelEnds">
+                LEVEL :
+            </div>
+            <div id="finalScore">
+                YOUR SCORE:
+            </div>
+            <div onclick="startGameAgain()">
+                <i id="retry" class="fas fa-undo"></i>
+            </div>
+        </div>
+        <div class="game">
+
+            <div id="ExcellentContainer">
+                <div id="excellent" style="margin: auto;">
+                    <div id="excellentText">
+                        Excellent!
+                    </div>
+                    <div id="excellentShape">
+                        <i class="fas fa-level-up-alt"></i>
+                    </div>
+                </div>
+                <div id="pause1">
+                    <i class="fas fa-pause"></i>
+                </div>
+
+            </div>
+
+            <div class="progress">
+                <div id="sliderLevel">
+                    <label for="levelProgress">Level</label>
+                    <div id="timeLevelCounter">
+                        1/13
+                    </div>
+                    <meter id="levelProgress" value="1" min="0" low="0" high="13" optimum="13" max="13">2 out of
+                        10</meter>
+
+                </div>
+
+                <div id="progressContainer">
+                    <div class="scoreProgress">
+                        <div class="text">Score</div>
+                        <svg>
+                            <circle cx="20" cy="20" r="20"></circle>
+                            <circle cx="20" cy="20" r="20"></circle>
+                        </svg>
+                        <div id="scoreNumber">0</div>
+                    </div>
+                </div>
+                <div id="Right">
+                    <div id="sliderLevelTimer">
+                        <label for="timerProgress">Time</label>
+                        <div id="timeCounter">
+                            00:00
+                        </div>
+                        <meter id="timerProgress" value="30" min="0" low="5" high="12" optimum="30" max="30">2 out of
+                            10</meter>
+                    </div>
+                    <div id="pause2" onclick="chgPlay()" data-flag="true">
+                        <i class="fas fa-pause"></i>
+                    </div>
+                </div>
+            </div>
+
+            <audio id="pass">
+                <source src="pass.ogg" type="audio/ogg">
+            </audio>
+
+            <audio id="error">
+                <source src="error.ogg" type="audio/ogg">
+            </audio>
+
+            <div id="slider">
+
+                <div id="nextSlider"></div>
+                <div id="correctMark">
+                    <i class="fas fa-check"></i>
+                </div>
+
+                <div id="originalDiv">
+                    <canvas id="canvas1" width="300" height="300" />
+                </div>
+                <div id="overlay">
+
+                    <canvas id="canvas2" width="300" height="300" />
+                </div>
+                <div id="currentSlider"></div>
+                <div class="circles">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                
+            </div>
+
+            <div id="buttonsContainer">
+            </div>
+
+            <div id="pauseDiv">
+            </div>
+
+            <div id="continueGame" >
+                <i class="fas fa-play"onclick="continuePlay()"></i>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
